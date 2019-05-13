@@ -1,0 +1,503 @@
+{
+	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Console log" : {
+		"prefix": [ "clg", "console.log" ],
+		"body": [
+			"console.log($1);",
+		],
+		"description": "Log output to console"
+	},
+	"Console error" : {
+		"prefix": [ "cle", "console.error" ],
+		"body": [
+			"console.error($1);",
+		],
+		"description": "Log output to console as error"
+    },
+    "Styled components import" : {
+        "prefix": [ "imsc", "import st" ],
+        "body": [
+            "import styled from 'styled-components';"
+        ],
+        "description": "Import styled components"
+    },
+    "Prop types import" : {
+        "prefix": "impt",
+        "body": [
+            "import { $1 } from 'prop-types';",
+        ],
+        "description": "Import prop-types"
+    },
+    "Sagas takeEvery" : {
+        "prefix": "ste",
+        "body": [
+            "yield takeEvery(${1:ACTION_TYPE}, ${2:sagaFunction});",
+        ],
+        "description": "Import prop-types"
+    },
+    "Styled components template": {
+        "prefix": "sct",
+        "body": [
+            "import styled from 'styled-components';",
+            "",
+            "export const Styled$1 = styled.$2`",
+                "\t$3",
+            "`;",
+            "",
+            "Styled$1.displayName = 'Styled$1';",
+            ""
+        ],
+        "description": "Template for a styled.js file"
+    },
+    "Styled react router link": {
+        "prefix": "lst",
+        "body": [
+            "import { Link } from 'react-router-dom';",
+            "import styled from 'styled-components';",
+            "",
+            "export const StyledLink = styled(Link)`",
+                "\ttext-decoration: none;",
+                "\tcolor: inherit;",
+            "`;",
+            "",
+            "StyledLink.displayName = 'StyledLink';",
+            ""
+        ],
+        "description": "Template for a styled.js file"
+    },
+    "React import" : {
+        "prefix": [ "imr", "import R" ],
+        "body": [
+            "import React from 'react';",
+            "",
+            "$1"
+        ],
+        "description": "Import for React"
+    },
+    "React, Component import" : {
+        "prefix": [ "imrc", "import React, { C" ],
+        "body": [
+            "import React, { Component } from 'react';",
+        ],
+        "description": "Import for React, Component"
+    },
+    "React class component template" : {
+        "prefix": "rcct",
+        "body": [
+            "import React, { Component } from 'react';",
+            "",
+            "class $1 extends Component {",
+                "\tconstructor (props) {",
+                    "\t\tsuper (props);",
+                    "\t\tthis.state = {",
+                        "\t\t\t$2",
+                    "\t\t};",
+                "\t}",
+                "",
+                "\tcomponentDidMount () {",
+                    "\t\t$4",
+                "\t}",
+                "",
+                "\trender () {",
+                    "\t\treturn (",
+                    "\t\t\t$3",
+                    "\t\t);",
+                "\t}",
+            "}",
+            "",
+            "export default $1;",
+            ""
+        ],
+        "description": "Template for React class component/main.js file"
+    },
+    "React functional component template" : {
+        "prefix": "rfc",
+        "body": [
+            "import React from 'react';",
+            "import { $5 } from 'prop-types';",
+            "",
+            "const $1 = ({ ${2:prop} ${4:, children}${3:, ...props} }) => (",
+            "\t<$1 prop={ value }>{ ${4:children} }</$1>",
+            "\t<$1 prop={ value } />",
+            ");",
+            "",
+            "$1.propTypes = {",
+                "\t$2: $5",
+            "};",
+            "",
+            "$1.displayName = '$1';",
+            "",
+            "export default $1;",
+            ""
+        ],
+        "description": "Template for react functional component"
+    },
+    "React functional component + styled template" : {
+        "prefix": "rfcst",
+        "body": [
+            "import React from 'react';",
+            "import { Styled$1 } from './styled';",
+            "import { $5 } from 'prop-types';",
+            "",
+            "const $1 = ({ ${4:children}, ${3:...props} }) => (",
+            "\t<Styled$1 { $3 }>{ $4 }</Styled$1>",
+            "\t<Styled$1 { $3 } />",
+            ");",
+            "",
+            "$1.propTypes = {",
+                "\t$4: $5",
+            "};",
+            "",
+            "$1.displayName = '$1';",
+            "",
+            "export default $1;",
+            ""
+        ],
+        "description": "Template for react functional component + styled component"
+    },
+    "Component Did Mount" : {
+        "prefix": ["cdm", "componentDidMount"],
+        "body": [
+            "componentDidMount () {",
+                "\t$1",
+            "}"
+        ],
+        "description": "componentDidMount React function"
+    },
+    "Component Will Unmount" : {
+        "prefix": ["cwm", "componentWillUnmount"],
+        "body": [
+            "componentWillUnmount () {",
+                "\t$1",
+            "}"
+        ],
+        "description": "componentWillUnmount React function"
+    },
+    "Component Did Update" : {
+        "prefix": ["cdu", "componentDidUpdate"],
+        "body": [
+            "componentDidUpdate () {",
+                "\t$1",
+            "}"
+        ],
+        "description": "componentDidUpdate React function"
+    },
+    "Set State" : {
+        "prefix": [ "tss", "this.setS" ],
+        "body": [
+            "this.setState({ ...this.state, $1: $2 });",
+        ],
+        "description": "SetState React template"
+    },
+    "Destructure props" : {
+        "prefix": [ "const {", "dsp" ],
+        "body": [
+            "const { $1 } = this.props;",
+        ],
+        "description": "Destructure React props"
+    },
+    "Destructure state" : {
+        "prefix": [ "const {", "dss" ],
+        "body": [
+            "const { $1 } = this.state;",
+        ],
+        "description": "Destructure React state"
+    },
+    "Destructuring const" : {
+        "prefix": [ "const {", "dss" ],
+        "body": [
+            "const { $1 } = $2;",
+        ],
+        "description": "Destructure with const"
+    },
+    "Destructuring let" : {
+        "prefix": [ "const {", "dss" ],
+        "body": [
+            "let { $1 } = $2;",
+        ],
+        "description": "Destructure with let"
+    },
+    "import/export" : {
+        "prefix": "imex",
+        "body": [
+            "import $1 from './container';",
+            "export default $1;"
+        ],
+        "description": "Import/export for basic container index.js file"
+    },
+    "Redux connect template" : {
+        "prefix": "cnnt",
+        "body": [
+            "import $1 from './main';",
+            "",
+            "import { connect } from 'react-redux';",
+            "import { ${2:selectorNames} } from 'core/${4::folderName}/selector';",
+            "import { ${3:actionCreatorsNames} } from 'core/${4:folderName}/action';",
+            "",
+            "function mapStateToProps (state) {",
+                "\treturn {",
+                    "\t\t${5:key}: ${6:selector}(state)${7:,\n}",
+                "\t};",
+            "}",
+            "",
+            "const mapDispatchToProps = { ${8:actionCreatorsNames} };",
+            "",
+            "export default connect(mapStateToProps, mapDispatchToProps)($1);"
+        ],
+        "description": "Connect for basic container container.js file"
+    },
+    "Map state to props function" : {
+        "prefix": ["msp", "mapStateToProps"],
+        "body": [
+            "function mapStateToProps (state) {",
+                "\treturn {",
+                    "\t\t${1:key}: ${2:selector}(state)${3:,\n}",
+                "\t};",
+            "}",
+            "",
+        ],
+        "description": "Map state to props function"
+    },
+    "Map dispatch to props function" : {
+        "prefix": ["mdp", "mapDispatchToProps"],
+        "body": [
+            "const mapDispatchToProps = { ${1:actionCreatorsNames} };",
+            "${2:// Remember, its not necessary to explicitly pass parameters here\n// As they'll be passed regardless}",
+        ],
+        "description": "Map dispatch to props function"
+    },
+    "Connect export" : {
+        "prefix": ["xcn", "connect"],
+        "body": [
+            "export default connect(mapStateToProps, mapDispatchToProps)($1);"
+        ],
+        "description": "Connect export"
+    },
+    "Action creators template" : {
+        "prefix": "act",
+        "body": [
+            "import { ${1:ACTION_NAME1}, ${2:ACTION_NAME2} } from '../types';",
+            "",
+            "export function $3 () {",
+                "\treturn {",
+                    "\t\ttype: $1",
+                "\t};",
+            "}",
+            "",
+            "export function $4 ({ payload }) {",
+                "\treturn {",
+                    "\t\tpayload,",
+                    "\t\ttype: $2",
+                "\t};",
+            "}",
+            "",
+
+        ],
+        "description": "Template for action.js file"
+    },
+    "Action creator + payload" : {
+        "prefix": "acp",
+        "body": [
+            "export function $1 (payload) {",
+                "\treturn {",
+                    "\t\tpayload,",
+                    "\t\ttype: $2",
+                "\t};",
+            "}",
+            "",
+        ],
+        "description": "Action creator function with payload"
+    },
+    "Action creator + no payload" : {
+        "prefix": "acnp",
+        "body": [
+            "export function $1 () {",
+                "\treturn {",
+                    "\t\ttype: $2",
+                "\t};",
+            "}",
+            "",
+        ],
+        "description": "Action creator function without payload"
+    },
+    "Action type declaration" : {
+        "prefix": "atd",
+        "body": [
+            "export const ${1:ACTION_NAME} = '$2@${1:ACTION_NAME}';",
+            ""
+        ],
+        "description": "Action type declaration"
+    },
+    "Reducer case" : {
+        "prefix": ["rdc", "case "],
+        "body": [
+            "case ${1:TYPE_NAME}:",
+                "\treturn {",
+                    "\t\t...state,",
+                    "\t\t${2:storeKey}: payload",
+                "\t};"
+        ],
+        "description": "Case for Redux reducer"
+    },
+    "Saga function" : {
+        "prefix": "sgf",
+        "body": [
+            "export function* $1 () {",
+                "\ttry {",
+                    "\t\tconst data = yield call(${2:serviceFunc}${3:, optParam});",
+                    "\t\tyield put(${4:newActionCreator}(data));",
+                "\t} catch (err) {",
+                    "\t\tconsole.error(err);",
+                "\t}",
+            "}"
+        ],
+        "description": "Saga function"
+    },
+    "Axios function" : {
+        "prefix": "axf",
+        "body": [
+            "export const $1 = () => (",
+                "\taxios.${2:get}('${3:URL}')",
+                    "\t\t.then(function ({ data }) {",
+                        "\t\t\treturn data.${4:objKey};",
+                    "\t\t})",
+                    "\t\t.catch(function (error) {",
+                        "\t\t\tconsole.error(error);",
+                    "\t\t})",
+            ");"
+        ],
+        "description": "Axios call"
+    },
+    "Import react-router link" : {
+        "prefix": ["iml", "import { Link"],
+        "body": [
+            "import { Link } from 'react-router-dom';",
+        ],
+        "description": "Import react-router link"
+    },
+    "Fetch" : {
+        "prefix": ["fetch", "fapi"],
+        "body": [
+            "fetch(`$1`)",
+            "\t.then(response => response.json())",
+            "\t.then(data => {",
+                "\t\tconsole.log(data);",
+            "\t})",
+            "\t.catch(error => console.error(error));"
+        ],
+        "description": "JavaScript fetch for APIs"
+    },
+    "Component testing" : {
+        "prefix": "ctst",
+        "body": [
+            "import $1 from '../index';",
+            "",
+            "import React from 'react';",
+            "import { shallow } from 'enzyme';",
+            "",
+            "describe('<$1 />', () => {",
+                "\tlet wrapper;",
+                "\tconst children = 'children';",
+                "",
+                "\tbeforeEach(() => {",
+                    "\t\twrapper = shallow(",
+                        "\t\t\t<$1>{ children }</$1>",
+                    "\t\t);",
+                "\t});",
+                "",
+                "\tdescribe('render', () => {",
+                    "",
+                    "\t\tit('always renders Styled$1', () => {",
+                        "\t\t\tconst styled$1 = wrapper.find('Styled$1');",
+                        "\t\t\texpect(styled$1).toHaveLength(1);",
+                    "\t\t});",
+                    "",
+                    "\t\tit('should have children', () => {",
+                        "\t\t\texpect(wrapper.prop('children')).toBe(children);",
+                    "\t\t});",
+                    "",
+                    "\t});",
+                    "",
+                "});"
+        ],
+        "description": "React functional component testing"
+    },
+    "Action testing" : {
+        "prefix": ["atst"],
+        "body": [
+            "import { ${1:ACTION_TYPES}",
+            "} from 'core/types';",
+            "import { $2 } from '../action';",
+            "",
+            "describe('actions', () => {",
+                "\tconst payload = '';",
+                "",
+                "\tit('$3', () => {",
+                    "\t\tconst result = ${4:actionCreator}(${5:payload});",
+                    "\t\texpect(result).toEqual({",
+                        "\t\t\t${6:payload,}",
+                        "\t\t\ttype: $7",
+                    "\t\t});",
+                "\t});",
+                "",
+            "});"
+        ],
+        "description": "Testing for redux action types and action creators"
+    },
+    "Reducer testing" : {
+        "prefix": ["rdtst"],
+        "body": [
+            "import { $1Reducer } from '../reducer';",
+            "import { ${2:ACTION_TYPES} } from 'core/types';",
+            "",
+            "const defaultState = () => ({",
+                "\t${3:key}: $4",
+            "});",
+            "",
+            "describe('$5 reducer', () => {",
+                "",
+                "\tit('should return default state', () => {",
+                    "\t\tconst result = $1Reducer(undefined, {});",
+                    "\t\tconst record = defaultState();",
+                    "\t\texpect(result).toEqual(record);",
+                "\t});",
+                "",
+                "\tit('should return $6', () => {",
+                    "\t\tconst payload = $7;",
+                    "\t\tconst dispatchedAction = { ${8:payload}, type: ${9:ACTION_TYPE} };",
+                    "\t\tconst result = $1Reducer(defaultState(), dispatchedAction);",
+                    "\t\tconst record = { defaultState(), $10 }",
+                    "\t\texpect(result).toEqual(record);",
+                "\t});",
+                "",
+                "\tit('should return $11', () => {",
+                    "\t\tconst payload = $12;",
+                    "\t\tconst init$13 = $14;",
+                    "\t\tconst final$15 = $16;",
+                    "",
+                    "\t\tconst mockState = { ...defaultState(), $17: initial$18 };",
+                    "",
+                    "\t\tconst dispatchedAction = { ${19:payload}, type: ${20:ACTION_TYPE} };",
+                    "\t\tconst result = $1Reducer(mockState, dispatchedAction);",
+                    "\t\tconst record = { ...mockState, $21: final$22 };",
+                    "\t\texpect(result).toEqual(record);",
+                "\t});",
+            "});"
+        ],
+        "description": "Testing for redux reducer"
+    },
+
+}
